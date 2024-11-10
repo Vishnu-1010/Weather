@@ -89,7 +89,7 @@ input_place.value = name;
 function getcoordinates() {
   let Cityinput = input_place.value.trim();
   if(!Cityinput) return alert('Enter your city') ;
-  let  geo_weather_api = `http://api.openweathermap.org/geo/1.0/direct?q=${Cityinput}&limit=1&appid=${api_key}`;
+  let  geo_weather_api = `https://api.openweathermap.org/geo/1.0/direct?q=${Cityinput}&limit=1&appid=${api_key}`;
   fetch(geo_weather_api).then(res => res.json()).then(data =>{
     let {name,lat,lon,country} = data[0];  
     nowweather(name,lat,lon,country);
